@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body class="body">
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo-container">
+                    <a class="link-ft-image" href="/">
+                        <img class="header__logo-image link-ft-image__image flexible-img" src="img/logo.png" alt="logo">
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link header__nav-link--active btn js-nav-link" href="#intro">home</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link btn js-nav-link" href="#portfolio">portfolio</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link btn js-nav-link" href="#about">about</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link btn js-nav-link" href="#contact">contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <svg 
+                    class="mobile-toggler btn"
+                    id="mobileToggler"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40px" height="40px" viewBox="0 0 459 459"
+                >
+                    <g>
+                        <path class="mobile-toggler__stick" d="M0,76.5v51h459v-51H0z"/>
+                        <path class="mobile-toggler__stick" d="M0,255h459v-51H0V255z"/>
+                        <path class="mobile-toggler__stick" d="M0,382.5h459v-51H0V382.5z"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-menu__nav-list">
+                <li class="mobile-menu__nav-item">
+                    <a class="mobile-menu__nav-link btn" href="#intro">home</a>
+                </li>
+                <li class="mobile-menu__nav-item">
+                    <a class="mobile-menu__nav-link btn" href="#portfolio">portfolio</a>
+                </li>
+                <li class="mobile-menu__nav-item">
+                    <a class="mobile-menu__nav-link btn" href="#about">about</a>
+                </li>
+                <li class="mobile-menu__nav-item">
+                    <a class="mobile-menu__nav-link btn" href="#contact">contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section id="intro" class="intro">
+            <div class="container">
+                <div class="intro__inner">
+                    <h1 class="intro__title title--thin title--white-text">We Build <span class="text-bold">Brand</span></h1>
+                    <p class="intro__subtitle paragraph paragraph--thin paragraph--white-text">Lorem Ipsum is simply dummy text of the printing 
+                    and typesetting industry. when an unknown printer 
+                    took a galley of type and scrambled it to make a 
+                    type specimen book.</p>
+                    <a class="intro__btn btn btn--sz-big btn--bg-green" href="#">learn more</a>
+                    <br>
+                    <a class="link-ft-icon" href="#portfolio">
+                        <div class="intro__icon-container">
+                            <svg 
+                                class="flexible-img link-ft-icon__icon link-ft-icon__icon--white-to-green"
+                                viewBox="0 0 512 512" 
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path 
+                                    d="M512 256C512 114.837 397.163 0 256 0C114.837 0 0 114.837 0 
+                                    256C0 397.163 114.837 512 256 512C397.163 512 512 397.163 512 
+                                    256ZM240.917 335.083L134.251 228.416C130.091 224.256 128 218.795 
+                                    128 213.333C128 207.872 130.091 202.41 134.251 198.25C142.592 
+                                    189.909 156.075 189.909 164.416 198.25L256 289.835L347.584 
+                                    198.251C355.925 189.91 369.408 189.91 377.749 198.251C386.09 
+                                    206.592 386.09 220.075 377.749 228.416L271.082 335.083C262.741 
+                                    343.424 249.259 343.424 240.917 335.083Z" 
+                                />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="portfolio__inner">
+                    <div class="text-block">
+                        <h2 class="text-block__title title">Portfolio</h2>
+                        <p 
+                            class="text-block__subtitle paragraph"
+                        >
+                            Lorem Ipsum is simply dummy text 
+                            of the printing and typesetting 
+                            industry.
+                        </p>
+                    </div>
+                    <div class="portfolio__content">
+                        <ul id="filter" class="filter">
+                            <li class="filter__item">
+                                <button class="filter__btn filter__btn--active btn" data-category="all">all</button>
+                            </li>
+                            <li class="filter__item">
+                                <button class="filter__btn btn" data-category="design">design</button>
+                            </li>
+                            <li class="filter__item">
+                                <button class="filter__btn btn" data-category="graphic-design">graphic-design</button>
+                            </li>
+                            <li class="filter__item">
+                                <button class="filter__btn btn" data-category="flat-design">flat design</button>
+                            </li>
+                        </ul>
+                        <ul id="portfolioWorks" class="portfolio__works works-grid">
+                            <li class="work js-work" data-category="design flat-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/004-donation.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/005-education.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="graphic-design flat-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/003-economy.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="design graphic-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/006-rake.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="flat-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/014-job.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="graphic-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/009-book.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="graphic-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/007-well.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="work js-work" data-category="graphic-design">
+                                <div class="work__inner">
+                                    <a href="/">
+                                        <figure class="work__content">
+                                            <img class="work__main-img flexible-img" src="./img/019-clean-energy.svg" alt="">
+                                            <figcaption class="work__description">
+                                                <div class="work__icon-container">
+                                                    <img class="flexible-img" src="./img/magnifying-glass.svg" alt="">
+                                                </div>
+                                                <h3 class="work__title title">sample text</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__inner">
+                    <div class="text-block">
+                        <h2 class="text-block__title title title--white-text">About Us</h2>
+                        <p 
+                            class="text-block__subtitle paragraph paragraph--white-text"
+                        >
+                            Lorem Ipsum is simply dummy text 
+                            of the printing and typesetting 
+                            industry.
+                        </p>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="card__content">
+                                <img src="./img/img1.jpg" alt="" class="flexible-img card__img">
+                                <div class="text-block">
+                                    <h4 class="card__title text-block__title title">Lorem Ipsum is Simply</h4>
+                                    <p class="card__subtitle text-block__subtitle paragraph">project manager</p>
+                                </div>
+                                <p class="card__paragraph paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Nam eget erat nisi. Sed vitae sem neque. Eget erat nisi. Sed vitae sem neque. Dolor sit amet, 
+                                    consectetur adipiscing elit.
+                                </p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer__link card-footer__link--bg-blue" href="">
+                                    <div class="card-footer__icon-wrapper">
+                                        <img class="card-footer__icon" src="./img/linkedin.svg" alt="">
+                                    </div>
+                                </a>
+                            </footer>
+                        </div>
+                        <div class="card">
+                            <div class="card__content">
+                                <img src="./img/img2.jpg" alt="" class="flexible-img card__img">
+                                <div class="text-block">
+                                    <h4 class="card__title text-block__title title">Lorem Ipsum is Simply</h4>
+                                    <p class="card__subtitle text-block__subtitle paragraph">project manager</p>
+                                </div>
+                                <p class="card__paragraph paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Nam eget erat nisi.
+                                </p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer__link card-footer__link--bg-blue" href="">
+                                    <div class="card-footer__icon-wrapper">
+                                        <img class="card-footer__icon" src="./img/linkedin.svg" alt="">
+                                    </div>
+                                </a>
+                                <a class="card-footer__link card-footer__link--bg-yellow" href="">
+                                    <div class="card-footer__icon-wrapper">
+                                        <img class="card-footer__icon" src="./img/facebook.svg" alt="">
+                                    </div>
+                                </a>
+                                <a class="card-footer__link card-footer__link--bg-green" href="">
+                                    <div class="card-footer__icon-wrapper">
+                                        <img class="card-footer__icon" src="./img/twitter.svg" alt="">
+                                    </div>
+                                </a>
+                            </footer>
+                        </div>
+                        <div class="card">
+                            <div class="card__content">
+                                <img src="./img/img3.jpg" alt="" class="flexible-img card__img">
+                                <div class="text-block">
+                                    <h4 class="card__title text-block__title title">Lorem Ipsum is Simply</h4>
+                                    <p class="card__subtitle text-block__subtitle paragraph">project manager</p>
+                                </div>
+                                <p class="card__paragraph paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Nam eget erat nisi. Sed vitae sem neque. Ut fermentum nisi.
+                                    of the. Vitae sem neque. Ut fermentum nisi of the.
+                                </p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer__link card-footer__link--bg-blue" href="">
+                                    <div class="card-footer__icon-wrapper">
+                                        <img class="card-footer__icon" src="./img/linkedin.svg" alt="">
+                                    </div>
+                                </a>
+                                <a class="card-footer__link card-footer__link--bg-yellow" href="">
+                                    <div class="card-footer__icon-wrapper">
+                                        <img class="card-footer__icon" src="./img/facebook.svg" alt="">
+                                    </div>
+                                </a>
+                            </footer>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <section class="contact-us" id="contact">
+            <div class="contact-us__inner">
+                <div class="container">
+                    <div class="contact-us__content">
+                        <div class="text-block">
+                            <h4 class="text-block__title title">Contact Us</h4>
+                            <p class="text-block__subtitle paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                        <form class="contact-us__form" method="POST" id="contactForm" action="#">
+                            <fieldset class="contact-us__input-group contact-us__input-group--flex">
+                                <input class="contact-us__input-field contact-us__input-field--mr" required type="text" id="userName" placeholder="Your Name" name="userName">
+                                <input class="contact-us__input-field" type="email" id="userEmail" required placeholder="Your Email"  name="userEmail">
+                            </fieldset>
+                            <fieldset class="contact-us__input-group contact-us__input-group--text-right">
+                                <textarea class="contact-us__input-field" name="userMsg" required id="userMsg" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                <button class="contact-us__btn btn btn--sz-sm btn--bg-green">SUBMIT</button>
+                            </fieldset>
+                        </form>
+                        <div class="text-center">
+                            <button id="contactInfoBtn" class="contact-us__btn btn btn--sz-mid btn--bg-green">CONTACT INFO</button>
+                        </div>
+                        <div class="popup js-popup" id="contactInfoPopup">
+                            <div class="popup__inner">
+                                <h5 class="popup__title title title--white-text">INFORMATION</h5>
+                                <ul class="popup__content">
+                                    <li class="popup__item">
+                                        <span class="text-bold">Address</span>: Lorem ipsum consectetu
+                                        12345-Lorem ipsum consectetu
+                                        Lorem ipsum , consectetu
+                                    </li>
+                                    <li class="popup__item"><span class="text-bold">Phone</span>: +1 800 258 2598</li>
+                                    <li class="popup__item"><span class="text-bold">Fax</span>: +1 500 6343 8690</li>
+                                    <li class="popup__item"><span class="text-bold">Email</span>: info(at)appstore.com</li>
+                                </ul>
+                                <button class="popup__close btn js-popup-close">&#215;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p class="footer__text">
+                    © 2014 Design by 
+                    <a class="footer__link" href="https://w3layouts.com/">w3layouts</a>. 
+                    Remade by <a class="footer__link" href="https://dev-akunishnikov.space/">Akunishnikov Yehor</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <%= reload%>
+</body>
+</html>

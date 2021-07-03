@@ -1,0 +1,722 @@
+@import './vars.scss';
+
+// Global settings
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 100%;
+    color: $mainText;
+
+    scroll-behavior: smooth;
+}
+
+.body {
+    font-size: 100%;
+
+    &--noscroll {
+        overflow: hidden;
+    }
+}
+
+// ---------------------------------------------------- BLOCKS ---------------------------------------------------- //
+
+.flexible-img {
+    width: 100%;
+    height: auto;
+
+    vertical-align: bottom;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+// Button
+.btn {
+    display: inline-block;
+
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+    color: $mainText;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s linear, color .2s linear;
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &--sz-sm {
+        padding: .5em 1em;
+    }
+
+    &--sz-mid {
+        padding: 0.9em 1.5em;
+    }
+
+    &--sz-big {
+        padding: 1.2em 2.5em;
+    }
+
+    &--bg-green {
+        color: $secondaryText;
+
+        background-color: $mainBg;
+
+        &:hover, &:focus {
+            background-color: darken($mainBg, 8%) !important;
+        }
+
+        &:active {
+            background-color: darken($mainBg, 15%);
+        }
+    }
+
+    &--hover-green {
+        &:hover, &:focus {
+            background-color: $mainBg;
+        }
+
+        &:active {
+            background-color: darken($mainBg, 8%);
+        }
+    }
+}
+// Button
+
+// Title
+.title {
+    font-weight: 400;
+    color: $mainText;
+
+    &--white-text {color: $secondaryText;}
+    &--bold {@extend .text-bold;}
+    &--thin {font-weight: 300;}
+}
+// Title
+
+// Paragraph
+.paragraph {
+    &--white-text{@extend .title--white-text;}
+    &--bold {@extend .title--bold;}
+    &--thin {@extend .title--thin;}
+}
+// Paragraph
+
+//Bold-fragment
+.text-bold {
+    font-weight: 700;
+}
+.text-extrabold {
+    font-weight: 900;
+}
+//Bold-fragment
+
+// Hoverable Icon
+.link-ft-icon {
+    &:hover, &:focus {
+        .link-ft-icon__icon {
+            &--white-to-green {
+                fill: $mainBg;
+            }
+        }
+    }
+    &__icon {
+        &--white-to-green {
+            fill: $secondaryBg;
+    
+            transition: fill .2s linear;
+        }
+    }
+}
+
+.link-ft-image {
+    .link-ft-image__image {
+        transition: opacity .2s linear;
+    }
+
+    &:hover, &:focus {
+        .link-ft-image__image {
+            opacity: .7;
+        }
+    }
+}
+// Hoverable Icon
+
+// Main
+.main {
+    margin-top: 100px;
+}
+// Main
+
+// Filter
+.filter {
+    margin-bottom: 1.2em;
+
+    list-style: none;
+    text-align: center;
+
+    &__item {
+        margin: 5px;
+    
+        display: inline-block;
+    
+        opacity: .9;
+    }
+    
+    &__btn {
+        @extend .btn--bg-green;
+        @extend .btn--sz-sm;
+    
+        &--active {
+            background-color: darken($mainBg, 15%);
+            &:hover, &:focus {
+                background-color: darken($mainBg, 15%) !important; 
+            }
+        }
+    }
+}
+// Filter
+
+// Cat-grid
+.works-grid {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 0 50px;
+
+    list-style: none;
+
+    background-color: #fdfdfd;
+
+    @media screen and (max-width: 540px) {
+        padding: 0 40px;
+    }
+}
+// Cat-grid
+
+// Work
+.work {
+    position: relative;
+
+    margin: 20px 35px;
+    width: calc(100% / 4 - 70px);
+
+    background-color: $mainBg;
+    border-radius: 50%;
+
+    @media screen and (max-width: 992px) {
+        width: calc(100% / 3 - 70px);
+    }
+
+    @media screen and (max-width: 768px) {
+        width: calc(100% / 2 - 70px);
+    }
+
+    @media screen and (max-width: 540px) {
+        width: 100%;
+    }
+
+    &:hover {
+        .work__description {
+            opacity: 1;
+        }
+
+        .work__main-img {
+            opacity: .2;
+        }
+    }
+
+    &__main-img {
+        transition: opacity .2s linear;
+    }
+
+    &__description {
+        width: 100%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        text-align: center;
+
+        transform: translate(-50%, -50%);
+        opacity: 0;
+
+        transition: opacity .5s linear;
+    }
+
+    &__icon-container {
+        width: 40px;
+        height: 40px;
+
+        margin: 0 auto 0.5em;
+    }
+
+    &__title {
+        font-size: 1em;
+        text-transform: uppercase;
+        color: $secondaryText;
+    }
+}
+// Work
+
+// Text container
+.text-block {
+    text-align: center;
+    
+    &__title {
+        margin-bottom: 0.5em;
+
+        font-size: 2em;
+    }
+
+    &__subtitle {
+        margin-bottom: 1.5em;
+    }
+}
+// Text container
+
+// Cards
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+    }
+}
+// Cards
+
+// Card
+.card {
+    width: 100%;
+    margin: 15px;
+
+    position: relative;
+    z-index: 1;
+
+    background: $secondaryBg;
+    box-shadow: 3px 3px 10px 1px #18181869;
+
+    @media screen and (max-width: 992px) {
+        width: 50%;
+    }
+
+    @media screen and (max-width: 540px) {
+        width: 90%;
+    }
+
+    &:hover &__img {
+        transform: scale(1.03);
+    }
+
+    &__content {padding: 20px;}
+
+    &__img {
+        margin-bottom: 1em;
+
+        border-radius: 5px;
+
+        transition: transform .2s linear;
+    }
+
+    &__title {font-size: 1.5em;}
+    &__subtitle {font-style: italic;}
+    &__paragraph {line-height: 1.8;}
+}
+// Card
+
+// card-footer
+.card-footer {
+    display: flex;
+
+    &__link {
+        width: 100%;
+    
+        transition: background-color .2s linear;
+
+        &--bg-blue {
+            background-color: #4361ee;
+            &:hover {background-color: darken(#4361ee, 5);}
+        }
+        &--bg-green {
+            background-color: #06d6a0;
+            &:hover {background-color: darken(#06d6a0, 5);}
+        }
+        &--bg-yellow {
+            background-color: #ffc300;
+            &:hover {background-color: darken(#ffc300, 5);}
+        }
+    }
+    
+    &__icon-wrapper {
+        height: 40px;
+        width: 100%;
+        padding: 10px 5px;
+    
+        text-align: center;
+    }
+    
+    &__icon {
+        height: 100%;
+        width: auto;
+    }
+}
+// card-footer
+
+// flex wrapper
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+// flex wrapper 
+
+// Popup
+.popup {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background-color: rgba($mainBg, .5);
+    cursor: pointer;
+
+    &__inner {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+
+        position: relative;
+        top: 50%;
+        left: 50%;
+
+        text-align: center;
+
+        transform: translate(-50%, -50%);
+        background-color: $mainBg;
+        border-radius: 10px;
+        border: 5px solid $secondaryText;
+        cursor: default;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5em;
+    }
+
+    &__content {
+        font-size: 1rem;
+        list-style: none;
+    }
+
+    &__item {
+        margin-bottom: 0.5em;
+
+        color: $secondaryText;
+    }
+
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+
+        font-size: 2rem;
+        color: $secondaryText;
+    }
+}
+// Popup
+
+// Text center
+.text-center {
+    text-align: center;
+}
+// Text center
+
+// Mobile toggler
+.mobile-toggler {
+    fill: $mainBg;
+
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+
+    &:hover &__stick:first-of-type,
+    &:hover &__stick:last-of-type {
+        fill: darken($mainBg, 10);
+    }
+
+    &--active &__stick {
+        transform-origin: left;
+
+        &:first-of-type {
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:last-of-type {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__stick {
+        transition: fill .2s linear, opacity .2s linear, transform .2s linear;
+    }
+}
+// Mobile toggler
+
+// Mobile menu
+.mobile-menu {
+    display: none;
+
+    width: 100%;
+
+    border-top: 3px solid $mainBg;
+    border-bottom: 3px solid $mainBg;
+    display: none;
+
+    &__nav-list {
+        padding: 10px 0;
+
+        text-align: center;
+    }
+
+    &__nav-item:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    &__nav-link {
+        @extend .header__nav-link;
+    }
+}
+// Mobile menu
+
+
+
+// ----------------------------------------------------SECTIONS ---------------------------------------------------- //
+
+// Header
+.header {
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background: $secondaryBg;
+    box-shadow: 0px -5px 5px 1px $mainText;
+
+    &--moving {
+        .header__inner {
+            height: 70px;
+        }
+    }
+
+    &__inner {
+        height: 100px;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        transition: height .1s linear;
+
+        @media screen and (max-width: 768px) {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__logo-container {
+        width: 14em;
+    }
+
+    &__nav {
+        @media screen and (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__nav-item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
+    }
+
+    &__nav-link {
+        font-size: 1em;
+        color: inherit;
+        text-decoration: none;
+        @extend .btn--hover-green;
+        @extend .btn--sz-sm;
+
+        &--active {
+            @extend .btn--bg-green;
+
+            color: $secondaryText;
+        }
+    }
+}
+// Header
+
+// Intro
+.intro {
+    font-size: 1rem;
+
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__inner {
+        padding: 3.5em 0;
+
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 0.7em;
+
+        font-size: 3em;
+    }
+
+    &__subtitle {
+        max-width: 700px;
+        margin: 0 auto 1.4em;
+
+        font-size: 1.3em;
+        line-height: 1.5;
+    }
+
+    &__btn {
+        margin-bottom: 1.8em;
+    }
+
+    &__icon-container {
+        width: 45px;
+        margin: 0 auto;
+
+        display: inline-block;
+    }
+}
+// Intro
+
+// Portfolio
+.portfolio {
+    &__inner {
+        padding: 3.5em 0;
+    }
+}
+// Portfolio
+
+// About
+.about {
+    background-color: $mainBg;
+
+    &__inner {
+        padding: 3.5em 0;
+    }
+}
+// About
+
+// Contact us
+.contact-us {
+    &__inner {
+        @extend .about__inner;
+    }
+
+    &__form {
+        width: 100%;
+    }
+
+    &__input-group {
+        border: none;
+
+        margin-bottom: 20px;
+
+        &--flex {
+            display: flex;
+
+            @media screen and (max-width: 540px) {
+                flex-direction: column;
+            }
+        }
+
+        &--text-center {
+            text-align: center;
+        }
+
+        &--text-right {
+            text-align: right;
+        }
+    }
+
+    &__input-field {
+        width: 100%;
+        padding: 15px 15px;
+
+        font-style: italic;
+
+        resize: none;
+        border-radius: 0;
+        border: #acacac 2px solid;
+
+        &--mr {
+            margin-right: 20px;
+
+            @media screen and (max-width: 540px) {
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+// Contact us
+
+// Footer
+.footer {
+    background-color: #02241c;
+
+    &__inner {
+        padding: 0.8em 0;
+    }
+
+    &__text {
+        text-align: center;
+        color: $secondaryText;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $mainBg;
+    }
+}
+// Footer
