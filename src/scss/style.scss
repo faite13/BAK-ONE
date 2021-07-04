@@ -389,8 +389,8 @@ html {
 }
 // flex wrapper 
 
-// Popup
-.popup {
+// modal
+.modal {
     display: none;
 
     width: 100%;
@@ -447,7 +447,7 @@ html {
         color: $secondaryText;
     }
 }
-// Popup
+// modal
 
 // Text center
 .text-center {
@@ -457,30 +457,34 @@ html {
 
 // Mobile toggler
 .mobile-toggler {
-    fill: $mainBg;
-
-    @media screen and (min-width: 992px) {
-        display: none;
-    }
-
-    &:hover &__stick:first-of-type,
-    &:hover &__stick:last-of-type {
+    &:hover .mobile-toggler__stick:first-of-type,
+    &:hover .mobile-toggler__stick:last-of-type,
+    &:focus .mobile-toggler__stick:first-of-type,
+    &:focus .mobile-toggler__stick:last-of-type {
         fill: darken($mainBg, 10);
     }
 
-    &--active &__stick {
-        transform-origin: left;
+    @media screen and (min-width: 992px) {
+        display: none !important;
+    }
 
-        &:first-of-type {
-            transform: rotate(45deg);
-        }
+    &__icon {
+        fill: $mainBg;
 
-        &:nth-child(2) {
-            opacity: 0;
-        }
-
-        &:last-of-type {
-            transform: rotate(-45deg);
+        &--active .mobile-toggler__stick {
+            transform-origin: left;
+    
+            &:first-of-type {
+                transform: rotate(45deg);
+            }
+    
+            &:nth-child(2) {
+                opacity: 0;
+            }
+    
+            &:last-of-type {
+                transform: rotate(-45deg);
+            }
         }
     }
 
@@ -504,6 +508,7 @@ html {
         padding: 10px 0;
 
         text-align: center;
+        list-style: none;
     }
 
     &__nav-item:not(:last-child) {

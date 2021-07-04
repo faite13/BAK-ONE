@@ -5,6 +5,7 @@ import { $document, $window } from "./app";
 var $header = $('#header');
 var $menuToggler = $('#mobileToggler');
 var $mobileMenu = $('#mobileMenu');
+var $togglerIcon = $('#mobileTogglerIcon');
 
 var resizeHeader = function() {
     var scrollPosition = $document.scrollTop();
@@ -18,12 +19,12 @@ var resizeHeader = function() {
 
 var toggleMenu = function() {
     $menuToggler.on('click', function() {
-        $menuToggler.toggleClass('mobile-toggler--active');
+        $togglerIcon.toggleClass('mobile-toggler__icon--active');
         $mobileMenu.fadeToggle();
     });
 
     $window.on('resize', function() {
-        $menuToggler.removeClass('mobile-toggler--active');
+        $togglerIcon.removeClass('mobile-toggler__icon--active');
         $mobileMenu.fadeOut();
     });
 };

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BAK-ONE</title>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="./favicon.svg">
 </head>
 <body class="body">
     <header id="header" class="header">
@@ -32,18 +33,20 @@
                         </li>
                     </ul>
                 </nav>
-                <svg 
-                    class="mobile-toggler btn"
-                    id="mobileToggler"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40px" height="40px" viewBox="0 0 459 459"
-                >
-                    <g>
-                        <path class="mobile-toggler__stick" d="M0,76.5v51h459v-51H0z"/>
-                        <path class="mobile-toggler__stick" d="M0,255h459v-51H0V255z"/>
-                        <path class="mobile-toggler__stick" d="M0,382.5h459v-51H0V382.5z"/>
-                    </g>
-                </svg>
+                <button aria-label="Toggle mobile menu" class="mobile-toggler btn" id="mobileToggler">
+                    <svg 
+                        class="mobile-toggler__icon"
+                        id="mobileTogglerIcon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40px" height="40px" viewBox="0 0 459 459"
+                    >
+                        <g>
+                            <path class="mobile-toggler__stick" d="M0,76.5v51h459v-51H0z"/>
+                            <path class="mobile-toggler__stick" d="M0,255h459v-51H0V255z"/>
+                            <path class="mobile-toggler__stick" d="M0,382.5h459v-51H0V382.5z"/>
+                        </g>
+                    </svg>
+                </button>
             </div>
         </div>
         <nav class="mobile-menu" id="mobileMenu">
@@ -269,7 +272,7 @@
                             <div class="card__content">
                                 <img src="./img/img1.jpg" alt="" class="flexible-img card__img">
                                 <div class="text-block">
-                                    <h4 class="card__title text-block__title title">Lorem Ipsum is Simply</h4>
+                                    <h3 class="card__title text-block__title title">Lorem Ipsum is Simply</h3>
                                     <p class="card__subtitle text-block__subtitle paragraph">project manager</p>
                                 </div>
                                 <p class="card__paragraph paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -289,7 +292,7 @@
                             <div class="card__content">
                                 <img src="./img/img2.jpg" alt="" class="flexible-img card__img">
                                 <div class="text-block">
-                                    <h4 class="card__title text-block__title title">Lorem Ipsum is Simply</h4>
+                                    <h3 class="card__title text-block__title title">Lorem Ipsum is Simply</h3>
                                     <p class="card__subtitle text-block__subtitle paragraph">project manager</p>
                                 </div>
                                 <p class="card__paragraph paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -318,7 +321,7 @@
                             <div class="card__content">
                                 <img src="./img/img3.jpg" alt="" class="flexible-img card__img">
                                 <div class="text-block">
-                                    <h4 class="card__title text-block__title title">Lorem Ipsum is Simply</h4>
+                                    <h3 class="card__title text-block__title title">Lorem Ipsum is Simply</h3>
                                     <p class="card__subtitle text-block__subtitle paragraph">project manager</p>
                                 </div>
                                 <p class="card__paragraph paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -348,7 +351,7 @@
                 <div class="container">
                     <div class="contact-us__content">
                         <div class="text-block">
-                            <h4 class="text-block__title title">Contact Us</h4>
+                            <h2 class="text-block__title title">Contact Us</h2>
                             <p class="text-block__subtitle paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                         <form class="contact-us__form" method="POST" id="contactForm" action="#">
@@ -362,22 +365,22 @@
                             </fieldset>
                         </form>
                         <div class="text-center">
-                            <button id="contactInfoBtn" class="contact-us__btn btn btn--sz-mid btn--bg-green">CONTACT INFO</button>
+                            <button aria-label="Open info modal" id="contactInfoBtn" class="contact-us__btn btn btn--sz-mid btn--bg-green">CONTACT INFO</button>
                         </div>
-                        <div class="popup js-popup" id="contactInfoPopup">
-                            <div class="popup__inner">
-                                <h5 class="popup__title title title--white-text">INFORMATION</h5>
-                                <ul class="popup__content">
-                                    <li class="popup__item">
+                        <div class="modal js-modal" id="contactInfoModal">
+                            <div class="modal__inner">
+                                <h4 class="modal__title title title--white-text">INFORMATION</h4>
+                                <ul class="modal__content">
+                                    <li class="modal__item">
                                         <span class="text-bold">Address</span>: Lorem ipsum consectetu
                                         12345-Lorem ipsum consectetu
                                         Lorem ipsum , consectetu
                                     </li>
-                                    <li class="popup__item"><span class="text-bold">Phone</span>: +1 800 258 2598</li>
-                                    <li class="popup__item"><span class="text-bold">Fax</span>: +1 500 6343 8690</li>
-                                    <li class="popup__item"><span class="text-bold">Email</span>: info(at)appstore.com</li>
+                                    <li class="modal__item"><span class="text-bold">Phone</span>: +1 800 258 2598</li>
+                                    <li class="modal__item"><span class="text-bold">Fax</span>: +1 500 6343 8690</li>
+                                    <li class="modal__item"><span class="text-bold">Email</span>: info(at)appstore.com</li>
                                 </ul>
-                                <button class="popup__close btn js-popup-close">&#215;</button>
+                                <button aria-label="Close modal" class="modal__close btn js-modal-close">&#215;</button>
                             </div>
                         </div>
                     </div>

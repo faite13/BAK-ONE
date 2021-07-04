@@ -4,7 +4,7 @@ import { $body } from './app.js';
 
 var $contactInfoBtn = $('#contactInfoBtn');
 var $contactForm = $('#contactForm');
-var $contactInfoPopup = $('#contactInfoPopup');
+var $contactInfoModal = $('#contactInfoModal');
 
 var submitForm = function() {
     $contactForm.on('submit', function(e) {
@@ -15,21 +15,21 @@ var submitForm = function() {
     });
 };
 
-var popup = function() {
+var modal = function() {
     $contactInfoBtn.on('click', function() {
-        $contactInfoPopup.fadeIn();
+        $contactInfoModal.fadeIn();
         $body.addClass('body--noscroll');
     });
 
-    $contactInfoPopup.on('click', function(e) {
+    $contactInfoModal.on('click', function(e) {
         var $target = $(e.target);
-        var canClose = !$target.hasClass('js-popup-close') && !$target.hasClass('js-popup');
+        var canClose = !$target.hasClass('js-modal-close') && !$target.hasClass('js-modal');
 
         if(canClose) {
             return null;
         }
 
-        $contactInfoPopup.fadeOut();
+        $contactInfoModal.fadeOut();
         $body.removeClass('body--noscroll');
     });
 };
@@ -39,5 +39,5 @@ export var contactUs = function() {
         e.preventDefault();
     });
     submitForm();
-    popup();
+    modal();
 };
