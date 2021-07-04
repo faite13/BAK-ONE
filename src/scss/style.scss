@@ -655,7 +655,7 @@ html {
 // Contact us
 .contact-us {
     &__inner {
-        @extend .about__inner;
+        padding: 6em 0;
     }
 
     &__form {

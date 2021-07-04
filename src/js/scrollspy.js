@@ -2,62 +2,41 @@ import $ from 'jquery';
 
 import { $document, $window } from "./app.js";
 
-var $intro = $('#intro');
-var $portfolio = $('#portfolio');
-var $about = $('#about');
-var $contact = $('#contact');
+var $sections = $('.js-sec');
 
-var $navLinks = $('.js-nav-link');
+var $pcNavLinks = $('.js-nav-link');
+var $mobileLinks = $('.js-mobile-nav-link');
 
-var POSITION_FIX = 100;
-
-var blocksCoords = [
-    [
-        0,
-        $intro.height()
-    ],
-    [
-        $portfolio.offset().top - POSITION_FIX,
-        $portfolio.offset().top + $portfolio.height() - POSITION_FIX
-    ],
-    [
-        $about.offset().top - POSITION_FIX,
-        $about.offset().top + $about.height() - POSITION_FIX * 2
-    ],
-    [
-        $contact.offset().top - POSITION_FIX * 2,
-        $contact.offset().top + $contact.height()
-    ]
-];
-
-var BLOCKS_AMOUNT = blocksCoords.length;
-
-var scrollHandler = function() {
-    for(var i = 0; i < BLOCKS_AMOUNT; i++) {
-        var scrollPosition = $document.scrollTop();
-
-        var top = blocksCoords[i][0], bottom = blocksCoords[i][1];
-        var isInRange = scrollPosition >= top && scrollPosition <= bottom;
-
-        if(isInRange) {
-            $navLinks.each(function(i, link) {
-                $(link).removeClass('header__nav-link--active');
-            });
-            $($navLinks[i]).addClass('header__nav-link--active');
-
-            return null;
-        }
+var checkResoluton = function() {
+    if(window.matchMedia("(min-width: 992px)").matches){
+        $document.on('scroll', {$navLinks: $pcNavLinks}, scrollHandler);
+    }else {
+        $document.on('scroll', {$navLinks: $mobileLinks}, scrollHandler);
     }
 };
 
+var scrollHandler = function(e) {
+    var $navLinks = e.data.$navLinks;
+
+    $sections.each(function(i, section) {
+        var top = window.scrollY;
+        var offset = section.offsetTop - 100;
+        var height = section.offsetHeight;
+
+        if(top >= offset && top < offset + height) {
+            $navLinks.each(function(i, link){
+                $(link).removeClass('header__nav-link--active');
+            });
+
+            $($navLinks[i]).addClass('header__nav-link--active');
+        }
+    });
+};
+
 export var scrollspy = function() {
-    $document.on('scroll', scrollHandler);
+    checkResoluton();
 
     $window.on('resize', function() {
-        if(window.matchMedia("(min-width: 992px)").matches){
-            $document.on('scroll', scrollHandler);
-        }else {
-            $document.off('scroll', scrollHandler);
-        }
+        checkResoluton();
     });
 };
